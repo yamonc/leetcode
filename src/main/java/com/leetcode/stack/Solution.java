@@ -1,6 +1,6 @@
 package com.leetcode.stack;
 
-import java.util.Stack;
+import java.util.*;
 
 /**
  * @Author yamon
@@ -9,32 +9,36 @@ import java.util.Stack;
  * @Version 1.0
  */
 public class Solution {
-    private static int num=10;
-    private static int a;
-    public static void test(){
-        a=1;
-    }
 
+    public static boolean isValid(String s) {
+        int n = s.length();
+        if (n % 2 == 1) {
+            return false;
+        }
 
-
-    public static boolean isValid(String s){
-        Stack<Character> stack = new Stack<>();
-        for (char c:s.toCharArray()){
-            if (c=='('){
-                stack.push(')');
-            }else if(c=='['){
-                stack.push(']');
-            }else if(c=='{'){
-                stack.push('}');
-            }else if(stack.isEmpty()|| c!=stack.pop()){
-                return false;
+        Map<Character, Character> pairs = new HashMap<Character, Character>() {{
+            put(')', '(');
+            put(']', '[');
+            put('}', '{');
+        }};
+        Deque<Character> stack = new LinkedList<Character>();
+        for (int i = 0; i < n; i++) {
+            char ch = s.charAt(i);
+            if (pairs.containsKey(ch)) {
+                if (stack.isEmpty() || stack.peek() != pairs.get(ch)) {
+                    return false;
+                }
+                stack.pop();
+            } else {
+                stack.push(ch);
             }
         }
         return stack.isEmpty();
     }
 
+
     public static void main(String[] args) {
-        final boolean valid = isValid("(}");
+        final boolean valid = isValid("({})");
         System.out.println(valid);
     }
 }
