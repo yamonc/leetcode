@@ -1,44 +1,42 @@
-package com.leetcode.array;
+package com.leetcode.everyday;
 
+import com.leetcode.array.GetIntersectionNode2;
 import com.leetcode.everyday.preDefine.ListNode;
-
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * @Author yamon
- * @Date 2021-04-16 21:07
- * @Description 编写一个程序，找到两个单链表相交的起始节点 给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表没有交点，返回 null 。
+ * @Date 2021-06-04 15:49
+ * @Description 给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表没有交点，返回 null 。
  *
  * 图示两个链表在节点 c1 开始相交：
+ *
+ *
+ *
+ * 题目数据 保证 整个链式结构中不存在环。
+ *
+ * 注意，函数返回结果后，链表必须 保持其原始结构 。
+ *
  *
  * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/intersection-of-two-linked-lists
  * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  * @Version 1.0
  */
-public class GetIntersectionNode2 {
-
+public class GetIntersectionNode {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        if (headA == null || headB== null){
-            return null;
-        }
-        ListNode head1 = headA;
-        ListNode head2 = headB;
-        while (head1!=head2){
-            if (head1!=null){
-                head1=head1.next;
+        ListNode a = headA;
+        ListNode b = headB;
+        ListNode ans = null;
+        while (a.next!=null && b.next!=null){
+            if (a.val!=b.val){
+                a = a.next;
+                b = b.next;
             }else{
-                head1 = headB;
-            }
-
-            if (head2!=null){
-                head2 = head2.next;
-            }else {
-                head2 = headA;
+                ans = new ListNode(a.val);
+                ans = a.next;
             }
         }
-        return head1;
+        return ans;
     }
 
     public static void main(String[] args) {
@@ -62,6 +60,6 @@ public class GetIntersectionNode2 {
         nodeB2.next=nodeB3;
         nodeB3.next=nodeB4;
         nodeB4.next=nodeB5;
-        new GetIntersectionNode2().getIntersectionNode(headA,headB);
+        new GetIntersectionNode().getIntersectionNode(headA,headB);
     }
 }
