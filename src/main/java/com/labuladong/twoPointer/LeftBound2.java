@@ -1,4 +1,4 @@
-package com.labuladong;
+package com.labuladong.twoPointer;
 
 /**
  * @Author yamon

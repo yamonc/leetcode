@@ -1,4 +1,4 @@
-package com.labuladong;
+package com.labuladong.window;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -71,6 +71,6 @@ public class CheckInclusion {
     }
 
     public static void main(String[] args) {
-        System.out.println(new CheckInclusion().checkInclusion("ab", "eidboaoo"));
+        System.out.println(new CheckInclusion().checkInclusion("ab", "eidbaooo"));
     }
 }

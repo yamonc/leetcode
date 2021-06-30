@@ -1,4 +1,4 @@
-package com.labuladong;
+package com.labuladong.twoPointer;
 
 import com.leetcode.everyday.preDefine.ListNode;
 

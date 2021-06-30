@@ -1,4 +1,4 @@
-package com.labuladong;
+package com.labuladong.window;
 
 import java.util.HashMap;
 import java.util.Map;
