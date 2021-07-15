@@ -33,7 +33,7 @@ public class MajorityElement3 {
     }
 
     public static void main(String[] args) {
-        int[] arr = {7, 7, 5, 7, 5, 1 , 5, 7 , 5, 5, 7, 7 , 7, 7, 7, 7};
+        int[] arr = {1,2,3};
         System.out.println(new MajorityElement3().majorityElement(arr));
     }
 }

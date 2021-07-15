@@ -8,7 +8,7 @@ import java.util.Arrays;
  * @Description
  * @Version 1.0
  */
-public class Test {
+class Test {
     int countPrimes(int n) {
         boolean[] isPrim = new boolean[n];
         // 将数组都初始化为 true
