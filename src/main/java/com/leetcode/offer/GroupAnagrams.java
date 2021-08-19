@@ -1,7 +1,5 @@
 package com.leetcode.offer;
 
-import com.leetcode.everyday.HammingWeight;
-
 import java.util.*;
 
 /**

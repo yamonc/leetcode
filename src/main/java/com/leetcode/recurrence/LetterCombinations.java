@@ -1,7 +1,5 @@
 package com.leetcode.recurrence;
 
-import com.leetcode.everyday.HammingWeight;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
