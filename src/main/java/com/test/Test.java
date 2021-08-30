@@ -9,28 +9,8 @@ import java.util.Arrays;
  * @Version 1.0
  */
 class Test {
-    int countPrimes(int n) {
-        boolean[] isPrim = new boolean[n];
-        // 将数组都初始化为 true
-        Arrays.fill(isPrim, true);
-        for (int i = 2; i < n; i++){
-            if (isPrim[i]){
-                // i 的倍数不可能是素数了
-                for (int j = 2 * i; j < n; j += i) {
-                    isPrim[j] = false;
-                }
-            }
-        }
 
-        int count = 0;
-        for (int i = 2; i < n; i++) {
-            if (isPrim[i]) {
-                count++;
-            }
-        }
-        return count;
-    }
     public static void main(String[] args){
-        new Test().countPrimes(12);
+        int a = 5, b= 6, c= 7,d=8,m=2,n=2;
     }
 }
